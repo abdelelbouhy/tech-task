@@ -9,7 +9,7 @@ const Home = ({handleSubmit}) => <HomeStyle>
            noValidate={true}
        >
             <Field component='input' type='text' name='snippet' name='snippet' className='snippet' placeholder='Please enter your text here...'/>
-            <button type='submit' className='save' value='Save'>Save</button>
+            <button type='submit' className='save' value='Save' name='save'>Save</button>
        </Form>
     </HomeStyle>;
 
