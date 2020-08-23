@@ -1,8 +1,20 @@
 import React from 'react';
+import {Form, reduxForm, Field} from 'redux-form';
 import HomeStyle from './style';
+import {submitSnippetHandler} from '../../redux/actions'
 
-export default () =>
-    <HomeStyle>
-        <input type='text' name='snippet' className='snippet' placeholder='Please enter your text here...'/>
-        <input type='submit' className='save' value='Save' />
-    </HomeStyle>
+const Home = ({handleSubmit}) => <HomeStyle>
+       <Form
+           onSubmit={handleSubmit(submitSnippetHandler)}
+           noValidate={true}
+       >
+            <Field component='input' type='text' name='snippet' name='snippet' className='snippet' placeholder='Please enter your text here...'/>
+            <button type='submit' className='save' value='Save'>Save</button>
+       </Form>
+    </HomeStyle>;
+
+const withForm = reduxForm({
+    form: 'home',
+});
+
+export default withForm(Home);
