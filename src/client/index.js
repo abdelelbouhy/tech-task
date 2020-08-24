@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'
-import {Router, Route} from 'react-router';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 import Home from './components/Home'
+import Snippet from './components/Snippet'
 import configureStore from './configureStore'
 
 import {createBrowserHistory} from 'history';
@@ -14,8 +20,9 @@ const store = configureStore(initialState, history);
 
 const App = () => <Provider store={store}>
     <Router history={history}>
-        <Route path="/" component={Home} />
-        {/*<Route path="/post/:postId" component={}/>*/}
+        <Route path="/" component={Home} exact={true}  />
+        <Route path="/:snippetId/edit" component={Home} />
+        <Route path="/snippet/:snippetId" component={Snippet} />
     </Router>
 </Provider>;
 

@@ -1,23 +1,14 @@
-const AddSnippet = (state = {data: []}, action) => {
-    switch (action.type) {
-        case 'OP/ADD_SNIPPET/TRIGGER':
-            return {...state}
-        default:
-            return state;
-    }
-};
+const snippet = (state = {}, action) => {
 
-const editSnippet = (state = {data: {}}, action) => {
     switch (action.type) {
-        case 'OP/ADD_SNIPPET/EDIT':
-            return {...state}
-        default:
-            return state;
-    }
-};
-
-const updateSnippet = (state = {data: {}}, action) => {
-    switch (action.type) {
+        case 'OP/ADD_SNIPPET/SUCCESS':
+            return {
+                ...state,
+                ...action.payload.data,
+                isEditing: false,
+            };
+        case 'OP/EDIT_SNIPPET/TRIGGER':
+            return {...state, isEditing: true};
         case 'OP/ADD_SNIPPET/UPDATE':
             return {...state}
         default:
@@ -26,9 +17,7 @@ const updateSnippet = (state = {data: {}}, action) => {
 };
 
 const reducers = {
-    AddSnippet,
-    editSnippet,
-    updateSnippet,
+    snippet,
 };
 
 export default reducers;
