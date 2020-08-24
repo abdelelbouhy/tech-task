@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Form, reduxForm, Field} from 'redux-form';
 import {useSelector} from "react-redux";
 import {Link} from 'react-router-dom';
@@ -9,11 +9,13 @@ import {snippetSelector, editSelector} from "./selectors";
 const Home = ({handleSubmit, change}) => {
     const snippet = useSelector(snippetSelector);
     const isEditing = useSelector(editSelector);
+    const [editStatus, updateEditStatue] = useState(true);
 
 
     useEffect(() => {
-        if(snippet?.value) {
+        if(snippet?.value && editStatus) {
             change('snippet', snippet.value);
+            updateEditStatue(!isEditing);
         }
     });
 

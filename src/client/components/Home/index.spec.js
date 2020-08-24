@@ -35,10 +35,5 @@ describe('Home', () => {
             const {getByName} = renderComponent();
             expect(getByName('save')).toBeInTheDocument();
         });
-
-        it('should render view snippet link', () => {
-            const {getByText} = renderComponent({snippet: {hash: 'hash'}});
-            expect(getByText('View Snippet')).toBeInTheDocument();
-        });
     });
 });

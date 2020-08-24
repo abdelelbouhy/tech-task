@@ -1,4 +1,3 @@
-// import path from 'path';
 import ejs from 'ejs';
 import express from 'express';
 import path from 'path';
@@ -17,16 +16,15 @@ app
     .listen(3000, () => {
         const command = /linux|darwin/.test(process.platform) ? 'open' : process.platform === 'win32' ? 'start' : '';
 
-        // if (command) {
-        //     childProcess.exec(`${command} -a "Google Chrome" http://localhost:3000`, () => {
-        //
-        //     });
-        //
-        //     console.log('http://localhost:3000');
-        // } else {
-        //     console.log('http://localhost:3000');
-        // }
+        if (command) {
+            childProcess.exec(`${command} -a "Google Chrome" http://localhost:3000`, () => {
 
+            });
+
+            console.log('http://localhost:3000');
+        } else {
+            console.log('http://localhost:3000');
+        }
     });
 
 app.use(bodyParser.urlencoded({ extended: false }));

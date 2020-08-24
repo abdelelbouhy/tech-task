@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import {buildQueries, queryHelpers} from '@testing-library/react';
 
 const queryAllByName = (...args) =>

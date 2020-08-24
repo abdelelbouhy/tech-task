@@ -9,7 +9,7 @@
     "start:dev:server": "nodemon --exec babel-node ./src/server/index.js",
     "start:dev:client": "webpack-dev-server",
     "build": "webpack",
-    "start": "npm i && webpack && npm run start:dev"
+    "start": "npm i && webpack && npm run test && npm run start:dev"
   },
   "repository": {
     "type": "git",

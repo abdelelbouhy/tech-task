@@ -10,9 +10,4 @@ export const clientApi = {
 
         return axios.post(`/addSnippet`, payload);
     },
-
-    updateSnippet: () => {
-
-        return axios.put(`user/logout`);
-    },
 };

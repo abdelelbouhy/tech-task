@@ -143,3 +143,16 @@ new text snippets.
 ---
 
 #### Generated for [abdelelbouhy](https://github.com/abdelelbouhy) on Thu Aug 20 2020 at 15:02:29 GMT+0100 (British Summer Time)
+
+##### tech stack
+* React
+* redux
+* saga
+* styled components
+* jest
+* react testing library
+* express
+
+### install and run
+
+yarn start or npm run start

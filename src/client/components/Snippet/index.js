@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import {snippetSelector} from "../Home/selectors";
 import {editSnippet} from '../../redux/actions';
-import {Link, Router} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Snippet = () => {
     const snippet = useSelector(snippetSelector);
